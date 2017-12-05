@@ -1,0 +1,24 @@
+<div class="container">
+	<section class="row">
+		<article class="col-xl-9 col-lg-8 col-md-7 bg-white p-4">
+			<h1 class="text-teal">Contact</h1>
+		    <hr>
+		    <form method="POST" action="/email">
+			  <div class="form-group">
+			    <label for="name">Name</label>
+			    <input type="email" class="form-control" id="name" name="name" placeholder="Your Name">
+			  </div>
+			  <div class="form-group">
+			    <label for="email">Email</label>
+			    <input type="email" class="form-control" id="email" name="email" placeholder="email@email.email">
+			  </div>
+			  <div class="form-group">
+			    <label for="text">Message</label>
+			    <textarea class="form-control" id="text" name="text" rows="10"></textarea>
+			  </div>
+				  <button type="submit" class="btn btn-primary bg-teal bdr-teal">Submit</button>
+			</form>
+		</article>
+		{{> sidebar }}
+	</section>
+</div>
