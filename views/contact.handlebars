@@ -3,7 +3,7 @@
 		<article class="col-xl-9 col-lg-8 col-md-7 bg-white p-4">
 			<h1 class="text-teal">Contact</h1>
 		    <hr>
-		    <form method="POST" action="/email">
+		    <form id="contactForm" method="POST" action="/contact">
 			  <div class="form-group">
 			    <label for="name">Name</label>
 			    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
@@ -21,6 +21,13 @@
 			    <textarea class="form-control" id="text" name="text" rows="10" required></textarea>
 			  </div>
 				<button type="submit" class="btn btn-primary bg-teal bdr-teal">Submit</button>
+				<button
+					class="g-recaptcha btn btn-primary bg-teal bdr-teal"
+					data-sitekey="6Lc9rjsUAAAAACE-R_yQDnsXLhMW7Wi8Dohu8Xlf"
+					data-callback="formSubmit"
+          data-size="invisible">
+					Submit
+				</button>
 			</form>
 			{{#if success}}
 				<div class="alert alert-success mt-2" role="alert">
@@ -36,3 +43,5 @@
 		{{> sidebar }}
 	</section>
 </div>
+
+<script src="./assets/js/contact.js"></script>
