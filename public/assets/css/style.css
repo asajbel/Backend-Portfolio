@@ -94,14 +94,14 @@ img.profile {
 	display: none;
 }
 
-@keyframes slideDown {
-	from {
+.youtube {
+	float: left;
+	margin: 0 24px 16px 0;
+	max-width: 100%;
+}
 
-	}
-
-	to {
-
-	}
+.portCard {
+	min-height: 100%;
 }
 
 @media screen and (max-width: 980px) {
@@ -154,5 +154,11 @@ img.profile {
 
 	.navbar-toggler {
 		margin-right: 1.5rem;
+	}
+
+	.youtube {
+		margin: 0 0 16px 0;
+		width: 100%;
+		height: calc(56.25vw * 0.7375);
 	}
 }

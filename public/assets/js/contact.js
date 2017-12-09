@@ -12,7 +12,8 @@ function hideAll(divClass) {
 	console.log(elements);
 	for (var i = 0; i < elements.length; i++) {
 		elements[i].style.display = "none";
-	}}
+	}
+}
 
 function show(divId) {
 	document.getElementById(divId).style.display = "block";
