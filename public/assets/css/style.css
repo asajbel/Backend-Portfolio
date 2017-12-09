@@ -1,3 +1,4 @@
+/* hack for google recaptcha badge bug */
 .grecaptcha-badge {
 	z-index: 100;
 }
@@ -87,6 +88,20 @@ img.profile {
   width: 200px;
   float: left;
   margin: 0 20px 20px 0;
+}
+
+.error {
+	display: none;
+}
+
+@keyframes slideDown {
+	from {
+
+	}
+
+	to {
+
+	}
 }
 
 @media screen and (max-width: 980px) {

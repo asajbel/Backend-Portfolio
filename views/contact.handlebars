@@ -7,20 +7,23 @@
 			  <div class="form-group">
 			    <label for="name">Name</label>
 			    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+          <small id="nameNull" class="error form-text text-danger" > Please enter a name</small>
 			  </div>
 			  <div class="form-group">
 			    <label for="email">Email</label>
 			    <input type="email" class="form-control" id="email" name="email" placeholder="email@email.email" required>
+          <small id="emailNull" class="error form-text text-danger" > Please enter a valid email address</small>
 			  </div>
 			  <div class="form-group">
-			    <label for="name">Subject</label>
+			    <label for="subject">Subject</label>
 			    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+          <small id="subjectNull" class="error form-text text-danger" > Please enter a subject</small>
 			  </div>
 			  <div class="form-group">
 			    <label for="text">Message</label>
 			    <textarea class="form-control" id="text" name="text" rows="10" required></textarea>
+          <small id="textNull" class="error form-text text-danger" > Please include a message</small>
 			  </div>
-				<button type="submit" class="btn btn-primary bg-teal bdr-teal">Submit</button>
 				<button
 					class="g-recaptcha btn btn-primary bg-teal bdr-teal"
 					data-sitekey="6Lc9rjsUAAAAACE-R_yQDnsXLhMW7Wi8Dohu8Xlf"
