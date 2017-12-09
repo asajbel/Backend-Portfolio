@@ -96,9 +96,13 @@ img.profile {
 
 .youtube {
 	float: left;
-	margin: 0 24px 16px 0;
+	margin: 0 0 16px 0;
 	width: 100%;
 	height: 240px;
+}
+
+.portCardPic {
+	margin-bottom: 16px;
 }
 
 .portCard {
@@ -169,7 +173,6 @@ img.profile {
 	}
 
 	.youtube {
-		margin: 0 0 16px 0;
 		height: calc(56.25vw * 0.7375);
 	}
 }
