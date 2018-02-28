@@ -18,8 +18,14 @@ function show(divId) {
 	document.getElementById(divId).style.display = "block";
 }
 
+var stopEvents = function(event) {
+	event.preventDefault();
+	event.stopPropagation();
+}
+
 var formSubmit = function(token) {
 	console.log(token);
+
 	hideAll("error");
 	var name = document.forms["contactForm"]["name"].value;
 	var email = document.forms["contactForm"]["email"].value;
