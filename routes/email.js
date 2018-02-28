@@ -37,6 +37,7 @@ module.exports = function(app) {
     }, function(error, response, body) {
       console.log("Body:", body);
       console.log("Error:", error);
+      body = JSON.parse(body);
       if (error) {
         res.render("contact", {
           title: "Contact",
@@ -44,8 +45,6 @@ module.exports = function(app) {
           error: "An error has been encountered sending your message. Contact asajbel.portfolio@gmail.com for help."
         });
       }
-      body = JSON.parse(body);
-      console.log(body.success, body.success == true, body.success === true);
       if (body.success) {
         var mailOptions = {
           from: {
