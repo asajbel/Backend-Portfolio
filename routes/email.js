@@ -9,11 +9,11 @@ module.exports = function(app) {
   var transporter = mailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: {
       user: "asajbel.portfolio@gmail.com",
-      pass: "Aj0gZWQCA6AH8m0e"
+      pass: process.env.EMAIL_PASS
     }
   });
 
