@@ -35,8 +35,8 @@ module.exports = function(app) {
         response: req.body['g-recaptcha-response']
       }
     }, function(error, response, body) {
-      console.log(body);
-      console.log(error);
+      console.log("Body:", body);
+      console.log("Error:", error);
       if (error) {
         res.render("contact", {
           title: "Contact",
@@ -44,41 +44,78 @@ module.exports = function(app) {
           error: "An error has been encountered sending your message. Contact asajbel.portfolio@gmail.com for help."
         });
       }
-    });
-
-  });
-
-  app.post("/email", function(req, res) {
-    console.log(req.body);
-    var mailOptions = {
-      from: {
-        name: req.body.name + "  " + req.body.email,
-        address: req.body.email
-      },
-      replyTo: req.body.email,
-      sender: req.body.email, // sender address
-      to: 'serdan66@gmail.com', // list of receivers
-      subject: req.body.subject, // Subject line
-      text: req.body.text, // plain text body
-    };
-    console.log(mailOptions);
-    transporter.sendMail(mailOptions, function(error, info) {
-      if (error) {
-        console.log(error);
-        res.render("contact", {
-          title: "Contact",
-          contact: true,
-          error: "An error has been encountered sending your message. Contact asajbel.portfolio@gmail.com for help."
-        }).end();
+      console.log(body.success, body.success == true, body.success === true);
+      if (body.success) {
+        var mailOptions = {
+          from: {
+            name: req.body.name + "  " + req.body.email,
+            address: req.body.email
+          },
+          replyTo: req.body.email,
+          sender: req.body.email, // sender address
+          to: 'serdan66@gmail.com', // list of receivers
+          subject: req.body.subject, // Subject line
+          text: req.body.text, // plain text body
+        };
+        console.log(mailOptions);
+        transporter.sendMail(mailOptions, function(mailErr, info) {
+          if (mailErr) {
+            console.log(mailErr);
+            res.render("contact", {
+              title: "Contact",
+              contact: true,
+              error: "An error has been encountered sending your message. Contact asajbel.portfolio@gmail.com for help."
+            });
+          } else {
+            console.log('Message sent: %s', info.messageId);
+            res.render("contact", {
+              title: "Contact",
+              contact: true,
+              success: "Your message has been sent. I'll get back to you as soon as I can."
+            });
+          }
+        });
       } else {
-        console.log('Message sent: %s', info.messageId);
         res.render("contact", {
           title: "Contact",
           contact: true,
-          success: "Your message has been sent. I'll get back to you as soon as I can."
-        }).end();
+          error: "An error has been encountered sending your message. I think you're a bot."
+        });
       }
     });
 
   });
+
+  // app.post("/email", function(req, res) {
+  //   console.log(req.body);
+  //   var mailOptions = {
+  //     from: {
+  //       name: req.body.name + "  " + req.body.email,
+  //       address: req.body.email
+  //     },
+  //     replyTo: req.body.email,
+  //     sender: req.body.email, // sender address
+  //     to: 'serdan66@gmail.com', // list of receivers
+  //     subject: req.body.subject, // Subject line
+  //     text: req.body.text, // plain text body
+  //   };
+  //   console.log(mailOptions);
+  //   transporter.sendMail(mailOptions, function(error, info) {
+  //     if (error) {
+  //       console.log(error);
+  //       res.render("contact", {
+  //         title: "Contact",
+  //         contact: true,
+  //         error: "An error has been encountered sending your message. Contact asajbel.portfolio@gmail.com for help."
+  //       }).end();
+  //     } else {
+  //       console.log('Message sent: %s', info.messageId);
+  //       res.render("contact", {
+  //         title: "Contact",
+  //         contact: true,
+  //         success: "Your message has been sent. I'll get back to you as soon as I can."
+  //       }).end();
+  //     }
+  //   });
+  // });
 }
