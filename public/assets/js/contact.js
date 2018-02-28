@@ -9,7 +9,6 @@ function toggle(divId) {
 
 function hideAll(divClass) {
 	var elements = document.getElementsByClassName(divClass);
-	console.log(elements);
 	for (var i = 0; i < elements.length; i++) {
 		elements[i].style.display = "none";
 	}
@@ -33,7 +32,7 @@ var formSubmit = function(token) {
 		show("nameNull");
 		fine = false;
 	}
-	if (email == "" || !filter.test(email)) {
+	if (email == "" || !emailFilter.test(email)) {
 		show("emailNull");
 		fine = false;
 	}

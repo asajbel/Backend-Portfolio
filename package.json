@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/asajbel/Backend-Portfolio#readme",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "nodemailer": "^4.4.0",

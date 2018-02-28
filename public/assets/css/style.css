@@ -100,7 +100,7 @@ img.profile {
 
 .portCardPic, .youtube{
 	margin-bottom: 16px;
-	max-width: 400px;
+	width: 400px;
 }
 
 .portCardPic.left, .youtube.left {
@@ -137,14 +137,26 @@ img.profile {
     clear: both;
 }
 
+
+@media screen and (min-width: 1600px) {
+	.container {
+		max-width: 1580px; 
+	}
+
+	.col-xl-9 {
+		flex: 0 0 80%;
+		max-width: 80%;
+	}
+}
+
 @media screen and (max-width: 1200px) {
   .youtube {
   	height: 160px;
-  	max-width: 100%;
+  	width: 100%;
   }
 
   .portCardPic {
-		max-width: 100%;
+		width: 100%;
 	}
 
   .portCardPic.left, .youtube.left {
