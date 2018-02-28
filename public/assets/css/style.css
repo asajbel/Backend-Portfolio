@@ -95,24 +95,67 @@ img.profile {
 }
 
 .youtube {
-	float: left;
-	margin: 0 0 16px 0;
-	width: 100%;
 	height: 240px;
 }
 
-.portCardPic {
+.portCardPic, .youtube{
 	margin-bottom: 16px;
+	max-width: 400px;
+}
+
+.portCardPic.left, .youtube.left {
+	margin-right: 16px;
+	float: left;
+}
+
+.portCardPic.right, .youtube.right {
+	margin-left: 16px;
+	float: right;
 }
 
 .portCard {
 	min-height: 100%;
 }
 
+.cardHeadLink {
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.list-group-flush {
+	padding: 0;
+	text-align: center;
+}
+
+.clearfix {
+  margin-bottom: 16px
+}
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
 @media screen and (max-width: 1200px) {
   .youtube {
   	height: 160px;
+  	max-width: 100%;
   }
+
+  .portCardPic {
+		max-width: 100%;
+	}
+
+  .portCardPic.left, .youtube.left {
+		margin-right: 0;
+		float: none;
+	}
+
+	.portCardPic.right, .youtube.right {
+		margin-left: 0;
+		float: none;
+	}
 }
 
 @media screen and (max-width: 980px) {

@@ -1,11 +1,29 @@
 <div class="card portCard">
   <div class="card-header text-teal">
-    <a class="cardHeadLink" href="http://made-alpha.herokuapp.com">MADE Colection Viewer</a>
+    <a class="cardHeadLink" href="http://made-alpha.herokuapp.com">MADE Collection Viewer</a>
+    <br/>
+    <a class="cardRepoLink" href="https://github.com/MADEcollection/MADE-Collection-Viewer">Repository</a>
   </div>
   <div class="card-body">
-  	<img class="img-fluid portCardPic" src="./assets/images/publicSearch.gif" alt="MADE Public Search"></img>
-    <p class="card-text">Web application to save and view game inventories. Made for the Museum of Art and Digital Entertainment.</p>
-    <p class="card-text">Allows visitors to the MADE to view their collection of games. Staff of the made can use it to add and remove games from the inventory.</p>
-    <a href="https://github.com/MADEcollection/MADE-Collection-Viewer">Repository</a>
+	  <section class="clearfix">
+	  	<img class="img-fluid portCardPic left" src="./assets/images/publicSearch.gif" alt="MADE Public Search"></img>
+			<p class="card-text"><i>Full-Stack Web Developer / Project Manager</i></p>
+	    <p class="card-text">Web application that allows patrons of the Museum of Art and Digital Entertainment to view the Museum’s collection of video games. </p>
+	    <p class="card-text">Staff of the MADE can use it to add and remove games from the inventory using a private frontend interface. 
+	    Automatically populates public frontend based on what the staff have added to the collection</p>
+	    <p class="card-text">Pulls from public APIs to populate the database with games and platforms. Requests are staggered using JavaScript promises to prevent overloading or being locked out of the APIs.</p>
+	    <p class="card-text">I was the project manager and lead developer on this program. I am still working on it with a live deployment coming soon.</p>
+    </section>
+    
+    <section>
+	    <ul class="list-group-flush">
+	    	<li class="list-group-item list-group-item-dark"><b>Technology used</b></li>
+	    	<li class="list-group-item">React.js for the frontends</li>
+	    	<li class="list-group-item">OAuth through Google for staff authentication</li>
+	    	<li class="list-group-item">Node.js with Express server for the backend</li>
+	    	<li class="list-group-item">MongoDB for the database with Mongoose for modeling</li>
+	    </ul>
+    </section>
+
   </div>
 </div>
